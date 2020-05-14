@@ -65,23 +65,23 @@ class Renderer {
 }
 
 
-// //OLD RENDERER, no longer in use. Comments for reference. 
 
-// const renderer = new Renderer()
-// //PROS:
-// // - Performant. Only makes one DOM query per element. Using an HTML string template
-// // would require that we insert the reference, then query the dom to get the reference
-// // - Secure. The alternative would require using innerHTML, which is known for 
-// // XSS attacks. Uses desired appendChild method instead. 
 
-// //CONS:
-// //- DATA ENTRY FOR THIS SUCKS. If we look at how I have to enter that data into a data file, 
-// // the amount of work I have to do for one HTML element is ridiculous. React solved this problem
-// // by making JSX. I do not want to write a JSX parser. 
-// //- Not pure. Does two major tasks under facade of only doing one. 
-// //- Not sure the best way to 'refresh' the DOM yet. But we will have to zero the DOM for each
-// //new game. 
-// //- Not the simplest approach. Will probably encounter more and more edge cases as time goes on. 
+const renderer = new Renderer()
+//PROS:
+// - Performant. Only makes one DOM query per element. Using an HTML string template
+// would require that we insert the reference, then query the dom to get the reference
+// - Secure. The alternative would require using innerHTML, which is known for 
+// XSS attacks. Uses desired appendChild method instead. 
+
+//CONS:
+//- DATA ENTRY FOR THIS SUCKS. If we look at how I have to enter that data into a data file, 
+// the amount of work I have to do for one HTML element is ridiculous. React solved this problem
+// by making JSX. I do not want to write a JSX parser. 
+//- Not pure. Does two major tasks under facade of only doing one. 
+//- Not sure the best way to 'refresh' the DOM yet. But we will have to zero the DOM for each
+//new game. 
+//- Not the simplest approach. Will probably encounter more and more edge cases as time goes on. 
 
 
 // function generateUI(data, root) {
