@@ -1,0 +1,20 @@
+.hidden{
+    display: none;
+}
+.hand{
+    display: flex; 
+    justify-content: center;
+}
+.board{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    width: 170px;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+    border:2px solid black;
+    border-radius: 10px
+}
+
