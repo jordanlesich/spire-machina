@@ -9,7 +9,7 @@ const H1_Hero_StartingDeck = [
     actions: [
       {type: "attack", power: 6},
     ],
-    description: 'Deal 6 Damage.',
+    description: 'Deal {calcAttack} Damage.',
   },
   {
     name: "Block",
@@ -19,7 +19,7 @@ const H1_Hero_StartingDeck = [
     actions: [
       {type: "block", power: 5},
     ],
-    description: 'Gain 5 Block.',
+    description: 'Gain {calcBlock} Block.',
   },
   {
     name: "Bash",
@@ -30,6 +30,6 @@ const H1_Hero_StartingDeck = [
       {type: "attack", power: 8},
       {type: "addEffectEnemy", effect: vulnerable, power: 2},
     ],
-    description: 'Deal 8 Damage and 2 Vulnerable',
+    description: 'Deal {calcAttack} Damage and 2 Vulnerable',
   },
 ];

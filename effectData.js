@@ -3,7 +3,7 @@
 const weak = {
   name: "Weak",
   trigger: "onAttack",
-  type: "debuff",
+  type: "debuffAttack",
   action: weakenAttack,
   lifecycle: 'onFinishTurn',
   lifecycleAction: 'decrement'
@@ -11,14 +11,14 @@ const weak = {
 const strength = {
   name: "Strength",
   trigger: "onAttack",
-  type: "buff",
+  type: "buffAttack",
   action: strengthenAttack,
   lifecycle: 'persist',
 };
 const vulnerable = {
   name: "Vulnerable",
   trigger: "onTakeDamage",
-  type: "debuff",
+  type: "debuffTakeDamage",
   action: vulnerableDmg,
   lifecycle: 'onFinishTurn',
   lifecycleAction: 'decrement'

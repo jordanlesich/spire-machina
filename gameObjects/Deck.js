@@ -13,24 +13,17 @@ class Deck {
       this.player = playerObject;
     }
     updateCardsUI() {
+      
       this.drawPile_UI.innerText = this.drawPile.length;
       this.discardPile_UI.innerText = this.discardPile.length;
 
-      //this turns each card object in the hand into the below HTML template
-      //and returns an array. The .join("") turns them all into one string to
-      //be jammed into HTML. Might be crude, but it drastically reduces DOM
-      //queries.
-
-      //TODO Refactor to renderer once I can fingure out renderer.refresh
-      //TODO generate description text dymically to account for changes in 
-      //status debuffs and upgrades
       const template = this.hand
         .map((card) => {
           return `
               <div class='card ${card.type}'>
                   <h3>${card.name}</h3>
                   <p> Energy: ${card.cost}</p>
-                  <p>${card.description}</p>
+                  <p>${genCardText(card.description, card.actions, this.player)}</p>
                   <button value='${card.id}' > Use! </button>
               </div>
               `;
