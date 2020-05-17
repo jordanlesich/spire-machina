@@ -65,7 +65,7 @@ class MatchManager {
   playerClosingPhase() {
     this.toggleEndTurnButton();
     this.deck.discardHand();
-    //check for ending effects
+    this.player.closingPhase()
     this.startEnemyTurn();
   }
 
@@ -98,7 +98,7 @@ class MatchManager {
 
   enemyClosingPhase() {
     this.enemies.forEach((enemy) => {
-        //TODO 
+        enemy.closingPhase()
     });
     this.startPlayerTurn();
   }

@@ -202,10 +202,10 @@ class Deck {
         this.player.energy.useEnergy(selectedCard.cost);
   
         ///Then we cycle through an arrary of actions
-        selectedCard.effect.forEach((effect) => {
+        selectedCard.actions.forEach((action) => {
           ///For each action we call the player.perfromAction, with the type of action
           ///and amount of power as arguments
-          this.player.performAction(effect.type, effect.power);
+          this.player.performAction(action.type, action.power, action.effect);
         });
         //then we send that card to the discard pile
         this.discardCard(selectedCard);

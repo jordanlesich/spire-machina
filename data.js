@@ -32,7 +32,7 @@ const H1_Hero = {
         { type: "block", power: 8 },
         { type: "makeWeak", power: 2 },
       ],
-      description: `Gain 8 block and apply 2 weak`,
+      description: () => `Gain ${blockPower} block and apply 2 weak`,
       cost: 1,
       quantity: 1,
     },
@@ -51,25 +51,25 @@ const H1_Hero = {
 const Div_Devil = {
   name: 'Div Devil',
   health: 72,
-  actions: [
+  moves: [
     {
       name: "Back Slash",
       type: "Attack",
-      effect: [{ type: "attack", power: 10 }],
+      actions: [{ type: "attack", power: 10 }],
     },
     {
       name: "Embolden!",
       type: "Special",
-      effect: [
+      actions: [
         { type: "block", power: 8 },
-        { type: "makeWeak", power: 2 },
-        { type: "gainStrength", power: 4 },
+        { type: "addEffectEnemy", effect: weak, power: 2 },
+        { type: "addEffectSelf", effect: strength, power: 4},
       ],
     },
     {
       name: "Rock Hide",
       type: "Block",
-      effect: [{ type: "block", power: 10 }],
+      actions: [{ type: "block", power: 10 }],
     },
   ],
 };

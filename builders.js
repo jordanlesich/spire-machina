@@ -11,7 +11,7 @@ function parseCardData(cardData) {
         id: `${cardType.name}-${i + 1}`,
         name: cardType.name,
         type: cardType.type,
-        effect: cardType.effect,
+        actions: cardType.actions,
         description: cardType.description,
         cost: cardType.cost,
       };

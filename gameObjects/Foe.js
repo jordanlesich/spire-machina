@@ -3,22 +3,22 @@ class Foe extends GamePiece {
     constructor(defaultStats, uiRefs, player) {
       super(defaultStats, uiRefs);
       this.intent = new Intent(uiRefs.intent);
-      this.currentAction = null;
-      this.actionList = defaultStats.actions;
+      this.intendedMove = null;
+      this.moveList = defaultStats.moves;
       this.currentEnemy = player;
     }
 
     generateAction() {
-      const randomAction = this.actionList[
-        Math.floor(Math.random() * this.actionList.length)
+      const randomMove = this.moveList[
+        Math.floor(Math.random() * this.moveList.length)
       ];
-      this.currentAction = randomAction;
-      this.intent.changeIntent(this.currentAction);
+      this.intendedMove = randomMove;
+      this.intent.changeIntent(this.intendedMove);
     }
     ///REFACTOR TO ANIMATION
     fireAction() {
-      this.currentAction.effect.forEach((effect) => {
-        this.performAction(effect.type, effect.power);
+      this.intendedMove.actions.forEach((action) => {
+        this.performAction(action.type, action.power, action.effect, action.target);
       });
     }
     queueAction(delay) {

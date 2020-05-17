@@ -55,7 +55,7 @@ class GameManager {
     }
     createDeck(){
         this.deck = new Deck(
-            parseCardData(H1_Hero.startingCards),
+            parseCardData(H1_Hero_StartingDeck),
             renderer.build(Deck_HTML_Data),
             this.selectedPlayer
           );
@@ -83,4 +83,26 @@ class GameManager {
 
 const gameManager = new GameManager()
 
-gameManager.setMenu()
+gameManager.newGame()
+
+// const player = gameManager.selectedPlayer
+
+// player.addEffect(weak, 3);
+// player.addEffect(strength, 3);
+// player.addEffect(ritual, 3);
+
+
+
+// const effectsToTrigger = player.findEffectsBy('trigger', 'onStartTurn')
+
+// player.attack(6)
+
+// player.effects[1].action(6)
+
+// effectsToTrigger.forEach(effect => {
+//     effect.action(this)
+
+// })
+// console.log(weakEffect)
+// player.removeEffect('Weak')
+// console.log(player)
