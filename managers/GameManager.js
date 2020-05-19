@@ -19,6 +19,7 @@ class GameManager {
             ref: 'board'
           }])
     }
+
     setMenu(){
         
         const newGameButton = this.boardUI = renderer.build([{
@@ -40,14 +41,14 @@ class GameManager {
        
     }
     createNewPlayer(){
-        this.selectedPlayer = new Hero(H1_Hero,
+        this.selectedPlayer = new Hero(IronClad,
              renderer.build(H1_Hero_HTML_Data,
              this.boardUI.board)
              )
     }
     createDemoFoe(){
         this.demoFoe = new Foe(
-            Div_Devil, 
+            JawWorm, 
             renderer.build(Div_Devil_HTML_Data,
             this.boardUI.board),
             this.selectedPlayer)
@@ -83,7 +84,7 @@ class GameManager {
 
 const gameManager = new GameManager()
 
-gameManager.newGame()
+gameManager.setMenu()
 
 // const player = gameManager.selectedPlayer
 

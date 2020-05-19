@@ -1,3 +1,25 @@
+function parseCardData(cardData) {
+    //this function parses all the card objects created in data
+    //This is mainly to save on data and create all the duplicates
+    //dynamically
+    let deck = [];
+    cardData.forEach((cardType) => {
+      for (let i = 0; i < cardType.quantity; i++) {
+        const card = {
+          id: `${cardType.name}-${i + 1}`,
+          name: cardType.name,
+          type: cardType.type,
+          actions: cardType.actions,
+          description: cardType.description,
+          cost: cardType.cost,
+        };
+        deck.push(card);
+      }
+    });
+  
+    return deck;
+  }
+
 function calcDamage(basePower, source){
     
     let newPower = basePower
@@ -52,15 +74,9 @@ function genCardText(stringText, basePower, source){
 }
 
 
+function genNumberBetween(min, max){
+    const randomDiff = Math.round(Math.random() * (max - min))
 
-const card = {
-    name: "Strike",
-    type: "Attack",
-    quantity: 5,
-    cost: 1,
-    actions: [
-      {type: "attack", power: 6},
-    ],
-    description: `Deal * Damage.`,
-  }
-
+    return min + randomDiff
+}
+console.log(genNumberBetween(48, 52))

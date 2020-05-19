@@ -34,6 +34,15 @@ const vulnerable = {
     lifecycleAction: 'decrement',
     }
 
+  const curlUp = {
+    name: "Curl Up",
+    trigger: "afterTakeDamage",
+    type: "addBlock",
+    action: counterBlock,
+    lifecycle: 'afterUse',
+    lifecycleAction: 'die'
+  }
+
     function weakenAttack(baseAttack) {
         return Math.floor(baseAttack * 0.75);
       }
