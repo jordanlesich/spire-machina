@@ -1,5 +1,9 @@
 'use strict';
-class Foe extends GamePiece {
+
+import GamePiece from './GamePiece.js'
+import Intent from './Intent.js'
+
+export default class Foe extends GamePiece {
     constructor(defaultStats, uiRefs, player) {
       super(defaultStats, uiRefs);
       this.intent = new Intent(uiRefs.intent);

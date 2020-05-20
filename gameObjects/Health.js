@@ -1,5 +1,9 @@
 'use strict'
-class Health {
+import {createAnimation_JS} from '../animator.js'
+
+
+
+export default class Health {
     constructor(defaultStats, ui) {
       this.currentHealth = defaultStats.health;
       this.maxHealth = defaultStats.health;

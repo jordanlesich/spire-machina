@@ -1,5 +1,5 @@
 'use strict';
-class Intent {
+export default class Intent {
     constructor(ui) {
       this.intent = null;
       this.intentUI = ui;

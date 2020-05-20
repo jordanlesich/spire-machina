@@ -1,5 +1,8 @@
 'use strict'
-class Effects extends Block{
+import Block from './Block.js';
+import Effect from './Effect.js'
+
+export default class Effects extends Block{
     constructor(defaultStats, ui) {
       super(defaultStats, ui);
       this.effects = [];

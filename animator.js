@@ -1,6 +1,6 @@
 'use strict';
 
-function createAnimation_JS(delay){
+export function createAnimation_JS(delay){
     //This function is a closure that solves two major problems with JS animations
       //1. JS is single threaded and makes async calls to the browser to handle time
       //2. Timeout calls do not use a fetch API, I have no way of telling JS that a

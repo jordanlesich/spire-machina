@@ -1,5 +1,7 @@
 'use strict';
-class GamePiece extends Effects{
+import Effects from './Effects.js'
+
+export default class GamePiece extends Effects{
     constructor(defaultStats, ui) {
       super(defaultStats, ui)
       this.name = defaultStats.name;

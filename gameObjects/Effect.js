@@ -1,4 +1,4 @@
-class Effect {
+export default class Effect {
     constructor(effect, power, host){
         this.name = effect.name;
         this.power = power;

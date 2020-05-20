@@ -1,7 +1,7 @@
 "use strict";
 
 //NEW RENDERER
-class Renderer {
+export default class Renderer {
   constructor (){
     this.dom = document.querySelector('.root')
     
@@ -67,7 +67,7 @@ class Renderer {
 
 
 
-const renderer = new Renderer()
+
 //PROS:
 // - Performant. Only makes one DOM query per element. Using an HTML string template
 // would require that we insert the reference, then query the dom to get the reference

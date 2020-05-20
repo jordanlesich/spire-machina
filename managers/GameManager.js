@@ -1,19 +1,34 @@
 'use strict'
 
+import Hero from '../gameObjects/Hero.js'
+import Deck from '../gameObjects/Deck.js'
+import Foe from '../gameObjects/Foe.js'
 
-class GameManager {
-    constructor(){
+import MatchManager from './MatchManager.js'
+
+import {IronClad} from '../data/avatarData.js'
+import {ironcladStartingDeck} from '../data/cardData.js'
+
+import {JawWorm} from '../data/foeData.js'
+
+import {Deck_HTML_Data, Player_HTML_Data, Foe_HTML_Data} from '../data/HTML_Data.js'
+
+import {parseCardData} from '../helpers/helpers.js'
+
+export default class GameManager {
+    constructor(DOM){
         this.boardUI = null;
         this.selectedPlayer = null;
         //TODO Move foes to Match Managers since they 
         //don't exist outside of matches
+        this.renderer = DOM
         this.demoFoe = null;
         this.deck = null;
         this.currentScene = null;
     }
 
     setBoardUI(){
-        this.boardUI = renderer.build([{
+        this.boardUI = this.renderer.build([{
             type: 'div',
             classNames: ['board'],
             ref: 'board'
@@ -22,7 +37,7 @@ class GameManager {
 
     setMenu(){
         
-        const newGameButton = this.boardUI = renderer.build([{
+        const newGameButton = this.boardUI = this.renderer.build([{
             type: 'button', 
             ref: 'newGame',
             classNames: ['newGame'],
@@ -33,7 +48,7 @@ class GameManager {
         //TODO create method to destroy listener
         newGameButton.newGame.addEventListener('click', (event) => {
             if(event.target.value === 'newGame'){
-                renderer.zero()
+                this.renderer.zero()
                 this.newGame()
             }
         })
@@ -42,22 +57,22 @@ class GameManager {
     }
     createNewPlayer(){
         this.selectedPlayer = new Hero(IronClad,
-             renderer.build(H1_Hero_HTML_Data,
+             this.renderer.build(Player_HTML_Data,
              this.boardUI.board)
              )
     }
     createDemoFoe(){
         this.demoFoe = new Foe(
             JawWorm, 
-            renderer.build(Div_Devil_HTML_Data,
+            this.renderer.build(Foe_HTML_Data,
             this.boardUI.board),
             this.selectedPlayer)
             
     }
     createDeck(){
         this.deck = new Deck(
-            parseCardData(H1_Hero_StartingDeck),
-            renderer.build(Deck_HTML_Data),
+            parseCardData(ironcladStartingDeck),
+            this.renderer.build(Deck_HTML_Data),
             this.selectedPlayer
           );
     }
@@ -73,8 +88,7 @@ class GameManager {
             this.selectedPlayer, 
             [this.demoFoe],
             this.deck,
-            this.
-            demoFoe)
+            this.renderer)
         this.currentMatch.startGame()
     }
     removeFromGame(character){
@@ -82,9 +96,6 @@ class GameManager {
     }
 }
 
-const gameManager = new GameManager()
-
-gameManager.setMenu()
 
 // const player = gameManager.selectedPlayer
 

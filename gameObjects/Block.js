@@ -1,5 +1,9 @@
+import Health from './Health.js'
+import {createAnimation_JS} from '../animator.js'
+
+
 'use strict';
-class Block extends Health{
+export default class Block extends Health{
     constructor(defaultStats, ui) {
     super(defaultStats, ui)  
       this.activeBlock = 0;

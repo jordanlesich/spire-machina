@@ -1,6 +1,6 @@
 //******************************** AVATARS ******************************** */
 
-const IronClad = {
+export const IronClad = {
     name: 'The Ironclad',
     health: 80,
     energy: 3,

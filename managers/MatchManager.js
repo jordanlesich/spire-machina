@@ -1,16 +1,18 @@
 "use strict";
+import {Match_HTML_Data} from '../data/HTML_Data.js'
 //This is high-order Class is manages each match. 
 //It takes in the player object, the deck, the enemies
 //and dictates the turn order, and what happens within
 //each turn.
-class MatchManager {
-  constructor(player, enemies, deck) {
+export default class MatchManager {
+  constructor(player, enemies, deck, renderer) {
     this.player = player;
     this.enemies = enemies;
     this.deck = deck;
     this.turn = 0;
     this.phase = ["opening", "action", "closing"];
     this.endTurnButton = null;
+    this.renderer = renderer
   }
 
   createListeners(){
@@ -33,7 +35,7 @@ class MatchManager {
   }
 
   createEndTurnButton(){
-    const matchUI = renderer.build(Match_HTML_Data);
+    const matchUI = this.renderer.build(Match_HTML_Data);
     this.endTurnButton = matchUI.endTurnButton
   }
 
@@ -122,8 +124,8 @@ class MatchManager {
 
   gameOver(msg){
     this.destroyListeners()
-    renderer.zero()
-    renderer.build([{
+    this.renderer.zero()
+    this.renderer.build([{
       type: 'h1',
       innerText: msg
     }])

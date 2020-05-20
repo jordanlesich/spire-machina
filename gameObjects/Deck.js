@@ -1,5 +1,9 @@
 'use strict'
-class Deck {
+
+import {createAnimation_JS} from '../animator.js'
+import {genCardText} from '../helpers/helpers.js'
+
+export default class Deck {
     constructor(deckData, cardRefs, playerObject) {
       this.drawPile = deckData;
       this.drawPile_UI = cardRefs.draw;

@@ -1,4 +1,4 @@
-function parseCardData(cardData) {
+export function parseCardData(cardData) {
     //this function parses all the card objects created in data
     //This is mainly to save on data and create all the duplicates
     //dynamically
@@ -20,7 +20,7 @@ function parseCardData(cardData) {
     return deck;
   }
 
-function calcDamage(basePower, source){
+export function calcDamage(basePower, source){
     
     let newPower = basePower
 
@@ -38,7 +38,7 @@ function calcDamage(basePower, source){
     // console.log('value returned: ', newPower)
     return newPower
 }
-function calcBlock(basePower, source){
+export function calcBlock(basePower, source){
     
     let newPower = basePower
     console.log(newPower)
@@ -56,7 +56,7 @@ function calcBlock(basePower, source){
 
 
 
-function genCardText(stringText, basePower, source){
+export function genCardText(stringText, basePower, source){
     const baseCardText = stringText
    const power = basePower[0].power
    function getVal(match){
@@ -74,7 +74,7 @@ function genCardText(stringText, basePower, source){
 }
 
 
-function genNumberBetween(min, max){
+export function genNumberBetween(min, max){
     const randomDiff = Math.round(Math.random() * (max - min))
 
     return min + randomDiff

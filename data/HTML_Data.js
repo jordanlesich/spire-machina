@@ -7,7 +7,7 @@
 //******************************** HTML Data to be fed into the renderer******************************** */
 
 
-const Deck_HTML_Data = [
+export const Deck_HTML_Data = [
   {
     type: "div",
     ref: "table",
@@ -40,7 +40,7 @@ const Deck_HTML_Data = [
     ],
   },
 ];
-const H1_Hero_HTML_Data = [
+export const Player_HTML_Data = [
   {
     type: "div",
     classNames: ["player"],
@@ -72,7 +72,7 @@ const H1_Hero_HTML_Data = [
     ],
   },
 ];
-const Div_Devil_HTML_Data = [
+export const Foe_HTML_Data = [
   {
     type: "div",
     classNames: ["foe"],
@@ -103,7 +103,7 @@ const Div_Devil_HTML_Data = [
   },
 ];
 
-const Match_HTML_Data = [
+export const Match_HTML_Data = [
   {
     type: "button",
     ref: "endTurnButton",
