@@ -1,3 +1,9 @@
+
+export function genNumberBetween(min, max){
+    const randomDiff = Math.round(Math.random() * (max - min))
+    return min + randomDiff
+}
+
 export function parseCardData(cardData) {
     //this function parses all the card objects created in data
     //This is mainly to save on data and create all the duplicates
@@ -35,13 +41,11 @@ export function calcDamage(basePower, source){
         })
     }
 
-    // console.log('value returned: ', newPower)
     return newPower
 }
 export function calcBlock(basePower, source){
     
     let newPower = basePower
-    console.log(newPower)
     const relevantDebuffs = source.findEffectsBy('type','debuffBlock')
     
     if(relevantDebuffs.length > 0){
@@ -50,7 +54,6 @@ export function calcBlock(basePower, source){
         })
     }
 
-    // console.log('value returned: ', newPower)
     return newPower
 }
 
@@ -64,7 +67,6 @@ export function genCardText(stringText, basePower, source){
            return calcDamage(power, source)
        }
        if (match === '{calcBlock}'){
-           console.log('fired')
            return calcBlock(power, source)
        }
    } 
@@ -74,9 +76,4 @@ export function genCardText(stringText, basePower, source){
 }
 
 
-export function genNumberBetween(min, max){
-    const randomDiff = Math.round(Math.random() * (max - min))
 
-    return min + randomDiff
-}
-console.log(genNumberBetween(48, 52))

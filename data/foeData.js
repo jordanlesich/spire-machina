@@ -1,10 +1,11 @@
 //******************************** ENEMIES ******************************** */
 
 import {effects} from './effectData.js'
+import {genNumberBetween} from '../helpers/helpers.js'
 
 export const JawWorm = {
     name: 'Jaw Worm',
-    health: [40,44],
+    health: genNumberBetween(40,44),
     moves: [
       {
         name: "Chomp",

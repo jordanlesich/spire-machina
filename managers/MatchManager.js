@@ -1,9 +1,8 @@
 "use strict";
 import {Match_HTML_Data} from '../data/HTML_Data.js'
-//This is high-order Class is manages each match. 
-//It takes in the player object, the deck, the enemies
-//and dictates the turn order, and what happens within
-//each turn.
+import gameManager from '../app.js'
+
+
 export default class MatchManager {
   constructor(player, enemies, deck, renderer) {
     this.player = player;

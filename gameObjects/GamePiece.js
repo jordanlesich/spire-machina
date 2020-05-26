@@ -1,5 +1,6 @@
 'use strict';
 import Effects from './Effects.js'
+import gameManager from '../app.js'
 
 export default class GamePiece extends Effects{
     constructor(defaultStats, ui) {

@@ -6,3 +6,6 @@ const DOM = new Renderer()
 const gameManager = new GameManager(DOM)
 
 gameManager.setMenu()
+
+
+export default gameManager
